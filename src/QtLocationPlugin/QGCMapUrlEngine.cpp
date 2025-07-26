@@ -17,6 +17,7 @@
 #include "QGCMapUrlEngine.h"
 #include "GoogleMapProvider.h"
 #include "BingMapProvider.h"
+#include "TianDiMapProvider.h"
 #include "GenericMapProvider.h"
 #include "EsriMapProvider.h"
 #include "MapboxMapProvider.h"
@@ -37,6 +38,10 @@ const QList<SharedMapProvider> UrlFactory::_providers = {
     std::make_shared<BingSatelliteMapProvider>(),
     std::make_shared<BingHybridMapProvider>(),
 
+    std::make_shared<TianDiRoadMapProvider>(),
+    std::make_shared<TianDiSatelliteMapProvider>(),
+    std::make_shared<TianDiHybridMapProvider>(),
+    	
     std::make_shared<StatkartTopoMapProvider>(),
     std::make_shared<StatkartBaseMapProvider>(),
     std::make_shared<SvalbardMapProvider>(),
