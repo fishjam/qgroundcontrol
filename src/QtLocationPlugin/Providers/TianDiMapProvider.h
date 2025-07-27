@@ -26,8 +26,6 @@ private:
     QString _getURL(int x, int y, int zoom) const final;
 
     const QString _mapType;
-    const QString _apiKey = QStringLiteral("{YOU_API_KEY}");
-
     const QString _mapUrl = QStringLiteral("https://t%1.tianditu.gov.cn/DataServer?tk=%2&T=%3&x=%4&y=%5&l=%6");
 };
 
@@ -37,7 +35,7 @@ public:
     TianDiRoadMapProvider()
         : TianDiMapProvider(
             QStringLiteral("TianDi Road"),
-            QStringLiteral("vec_w"),
+            QStringLiteral("cia_w"),
             QStringLiteral("png"),
             AVERAGE_TIANDI_STREET_MAP,
             QGeoMapType::StreetMap) {}
@@ -55,14 +53,3 @@ public:
             QGeoMapType::SatelliteMapDay) {}
 };
 
-class TianDiHybridMapProvider : public TianDiMapProvider
-{
-public:
-    TianDiHybridMapProvider()
-        : TianDiMapProvider(
-            QStringLiteral("TianDi Hybrid"),
-            QStringLiteral("cia_w"),
-            QStringLiteral("png"),
-            AVERAGE_TIANDI_SAT_MAP,
-            QGeoMapType::HybridMap) {}
-};
